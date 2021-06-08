@@ -1,11 +1,10 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import {getUsersRequest} from '../actions/users';
 function App() {
-  return (
-    <div>
-      Hello world
-    </div>
-  );
+  
+	return <div>Hello world</div>;
 }
 
-export default App;
+export default connect(null,
+  getUsersRequest())(App);
