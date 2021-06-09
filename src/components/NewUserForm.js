@@ -3,16 +3,15 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import users from '../reducers/users';
 
 const NewUserForm = ({ onSubmit }) => {
-	const [ user, setUser ] = useState({
+	const [ users, setUsers ] = useState({
 		firstName: '',
 		lastName: ''
 	});
 
-	console.log(user);
 
 	const handlerNameChanged = (e) => {
-		setUser({
-			...user,
+		setUsers({
+			...users,
 			[e.target.name]: e.target.value
 		});
 	};
@@ -20,8 +19,8 @@ const NewUserForm = ({ onSubmit }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		onSubmit({
-			firstName: user.firstName,
-			lastName: user.lastName
+			firstName: users.firstName,
+			lastName: users.lastName
 		});
 	};
 
